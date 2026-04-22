@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lantern Logic Quest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section id="homeScreen" class="screen active" aria-labelledby="gameTitle">
+      <div class="brand-row">
+        <div class="lantern-mark" aria-hidden="true">
+          <span></span>
+        </div>
+        <p>Single-player logic adventure</p>
+      </div>
+
+      <p id="homeMessage" class="home-message hidden" role="status"></p>
+
+      <div class="home-grid">
+        <div class="home-copy">
+          <h1 id="gameTitle">Lantern Logic Quest</h1>
+          <p class="intro">
+            Guide Mira through 10 vivid locations, from bright hills to haunted castle rooms.
+            Solve each gate with your mouse or trackpad, use hints when you need them, and
+            reach the hidden treasure vault.
+          </p>
+
+          <div class="instructions">
+            <h2>How to Play</h2>
+            <p>Read each stage question and click one answer.</p>
+            <p>Use the Hint button whenever you want a clue.</p>
+            <p>Clear all 10 stages to unlock the treasure chest at the end.</p>
+            <p>Each chest click takes exactly 1 coin. Taking more than 10 coins resets the quest.</p>
+          </div>
+
+          <button id="startBtn" class="primary-btn">Start Quest</button>
+        </div>
+
+        <div class="home-scene" aria-hidden="true">
+          <div class="home-sun"></div>
+          <div class="home-rainbow"></div>
+          <div class="home-cloud home-cloud-one"></div>
+          <div class="home-cloud home-cloud-two"></div>
+          <div class="home-castle"></div>
+          <div class="home-hills"></div>
+          <div class="home-path"></div>
+          <div class="home-trees"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen" aria-live="polite">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">Stage <span id="stageNumber">1</span> of <span id="stageTotal">10</span></p>
+          <h2 id="stageTitle">Stage Title</h2>
+        </div>
+
+        <div class="status-cluster">
+          <span id="sceneTypeBadge" class="scene-type-badge outside">Outside</span>
+          <button id="restartBtn" class="secondary-btn" type="button">Restart</button>
+        </div>
+      </header>
+
+      <div class="progress-track" aria-label="Game progress">
+        <div id="progressFill"></div>
+      </div>
+
+      <section class="adventure-view" aria-label="Adventure scene">
+        <div id="sceneArt" class="scene-art">
+          <div class="scene-glow"></div>
+          <div id="sceneDecor" class="scene-decor"></div>
+          <div class="hero" aria-label="Mira, the adventurer">
+            <div class="hero-cape"></div>
+            <div class="hero-body"></div>
+            <div class="hero-head"></div>
+            <div class="hero-lantern"></div>
+          </div>
+          <div id="stageObject" class="stage-object"></div>
+          <div id="sceneFloor" class="scene-floor"></div>
+        </div>
+      </section>
+
+      <section class="puzzle-panel">
+        <div class="puzzle-meta">
+          <p id="storyText" class="story-text"></p>
+          <p id="topicText" class="topic-text"></p>
+        </div>
+
+        <p id="puzzleText" class="puzzle-text"></p>
+
+        <div id="choices" class="choices" aria-label="Puzzle choices"></div>
+
+        <div class="control-row">
+          <button id="hintBtn" class="hint-btn" type="button">Get Hint</button>
+          <button id="nextBtn" class="primary-btn hidden" type="button">Next Stage</button>
+        </div>
+
+        <p id="feedback" class="feedback" role="status"></p>
+        <p id="hintText" class="hint-text"></p>
+      </section>
+    </section>
+
+    <section id="winScreen" class="screen win-screen">
+      <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+      <div class="treasure-room">
+        <div class="win-content">
+          <p class="eyebrow">Quest Complete</p>
+          <h2>You found the hidden treasure vault.</h2>
+          <p>
+            Mira unlocked every final seal. Click the chest with your mouse or trackpad to take gold,
+            but stop before greed ends the adventure.
+          </p>
+        </div>
+
+        <div class="treasure-panel">
+          <div id="goldCounter" class="gold-counter-box">Gold taken: 0 coins</div>
+
+          <button id="treasureChest" class="treasure-chest" type="button" aria-label="Treasure chest">
+            <span class="chest-lid"></span>
+            <span class="chest-base"></span>
+            <span class="chest-lock"></span>
+            <span class="chest-gold chest-gold-one"></span>
+            <span class="chest-gold chest-gold-two"></span>
+            <span class="chest-gold chest-gold-three"></span>
+          </button>
+
+          <p id="vaultMessage" class="vault-message">Click the chest to take treasure. One click takes one gold coin.</p>
+          <button id="playAgainBtn" class="secondary-btn" type="button">Restart Quest</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
