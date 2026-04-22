@@ -1,3 +1,5 @@
+# Play Latern Logic Quest
+https://tur79490.github.io/codex-assited-game/
 # Lantern Logic Quest
 
 Lantern Logic Quest is a single-player browser adventure game where the player guides Mira through 10 illustrated stages, answers harder general knowledge questions, uses hints when needed, and reaches a treasure vault at the end.
